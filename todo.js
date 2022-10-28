@@ -1,4 +1,6 @@
 const tasks = document.getElementById('tasks');
+// const todo = document.getElementById("to-do-container");
+// const done = document.getElementById("done-container");
 
 const check = () => { if (!localStorage.tasks) { localStorage.setItem('tasks', '[]'); } };
 
@@ -30,6 +32,8 @@ const appendHTML = (e, i) => {
 const loadTasks = () => {
   check();
   tasks.innerHTML = '';
+  // todo.innerHTML = '';
+  // done.innerHTML = '';
   const task = JSON.parse(localStorage.tasks);
 
   task.forEach((e, i) => appendHTML(e, i));
